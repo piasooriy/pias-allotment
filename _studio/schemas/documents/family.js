@@ -25,7 +25,7 @@ export default {
 		},
 		{
 			title: 'Slug', 
-			title: 'slug', 
+			name: 'slug', 
 			type: 'slug',
 			validation: rule => rule.required(),
 			options: {
