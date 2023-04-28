@@ -18,5 +18,12 @@ export default {
 			name: 'openingHours', 
 			type: 'string',
 		}, 
-	]
+	],
+	preview: {
+		prepare: () => {
+			return {
+				title: 'about'
+			}
+		}
+	}
 }
