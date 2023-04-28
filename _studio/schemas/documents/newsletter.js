@@ -33,6 +33,7 @@ export default {
 					name: 'alt', 
 					type: 'string', 
 					validation: rule => rule.required(),
+					description: 'Enter an alternative text for the image here'
 				}
 			]
 		}, 
