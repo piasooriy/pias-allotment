@@ -27,7 +27,7 @@ export default{
 					name: 'alt', 
 					type: 'string', 
 					validation: rule => rule.required(), 
-					description: 'Enter an alternative text here for the product',
+					description: 'Enter an alternative text here for the product image',
 				}
 			] 
 		},
