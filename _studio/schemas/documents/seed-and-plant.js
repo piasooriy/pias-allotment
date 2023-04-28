@@ -37,6 +37,12 @@ export default {
 			type: 'number', 
 			description: 'Enter price for plant or seed her in NOK'
 		},
+		{
+			title: 'Stock', 
+			name: 'stock', 
+			type: 'number', 
+			validation: rule => rule.required(),
+		}, 
 		/* {
 			title: 'Family', 
 			name: 'family', 
@@ -61,12 +67,6 @@ export default {
 			title: 'Description', 
 			name: 'description', 
 			type: 'text', 
-			validation: rule => rule.required(),
-		}, 
-		{
-			title: 'Stock', 
-			name: 'stock', 
-			type: 'number', 
 			validation: rule => rule.required(),
 		}, 
 		{
