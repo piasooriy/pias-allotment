@@ -1,7 +1,9 @@
 export default Structure => {
-	const {editor} =  Structure; 
+	const { divider, editor, list, documentTypeListItem} =  Structure; 
 
-	return editor()
-	.id('newsletter')
-	.schemaType('newsletter')
-};
+	return list()
+			.title('Newsletter')
+			.items([
+				documentTypeListItem('newsletter'),
+			])
+}
