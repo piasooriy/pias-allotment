@@ -1,6 +1,8 @@
+import { Preview } from "sanity";
+
 export default {
 	title: 'Settings',
-	name: 'setting', 
+	name: 'settings', 
 	type: 'document', 
 	fields: [
 		{
