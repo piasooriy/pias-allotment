@@ -42,6 +42,7 @@ export default {
 			name: 'descriptiveText', 
 			type: 'text', 
 			validation: rule => rule.required(),
+			vaidation: rule => rule.max(500).warning('Max 500 characters'),
 		},
 		{
 			title: 'Direction', 
@@ -49,19 +50,25 @@ export default {
 			type: 'text', 
 			validation: rule => rule.required(),
 		},
-		/* {
-			title: 'Supplies', 
-			name: 'supplies', 
-			type: 'array', 
+		{
+			title: 'Seed and Plant', 
+			name: 'seedAndPlant', 
+			type:'reference',
+			to: {type: 'seedAndPlant'}
+		},
+		{
+			title: 'Supply',
+			name: 'supply',
+			type: 'array',
 			of: [
 				{
-					type: 'reference', 
+					type: 'reference',
 					to: {
-						type: 'seed'
+						type: 'supply'
 					}
 				}
 			]
-		}, */
+		},
 		{
 			title: 'Published date', 
 			name: 'publishedDate', 
