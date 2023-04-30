@@ -38,6 +38,7 @@ export default {
 			type: 'text', 
 			description: 'Add a description about the plant family',
 			validation: rule => rule.required(),
+			vaidation: rule => rule.max(500).warning('Max 500 characters'),
 		}
 	]
 }

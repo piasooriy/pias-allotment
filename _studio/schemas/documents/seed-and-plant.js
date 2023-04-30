@@ -43,12 +43,12 @@ export default {
 			type: 'number', 
 			validation: rule => rule.required(),
 		}, 
-		/* {
+		{
 			title: 'Family', 
 			name: 'family', 
 			type:'reference',
 			to: {type: 'family'}
-		}, */
+		},
 		{
 			title: 'Category', 
 			name: 'category', 
@@ -68,6 +68,7 @@ export default {
 			name: 'description', 
 			type: 'text', 
 			validation: rule => rule.required(),
+			vaidation: rule => rule.max(500).warning('Max 500 characters'),
 		}, 
 		{
 			title: 'Product Format', 
