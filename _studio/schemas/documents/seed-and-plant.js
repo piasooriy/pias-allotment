@@ -43,12 +43,12 @@ export default {
 			type: 'number', 
 			validation: rule => rule.required(),
 		}, 
-		/* {
+		{
 			title: 'Family', 
 			name: 'family', 
 			type:'reference',
 			to: {type: 'family'}
-		}, */
+		},
 		{
 			title: 'Category', 
 			name: 'category', 
