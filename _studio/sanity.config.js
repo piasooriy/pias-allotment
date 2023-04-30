@@ -14,17 +14,17 @@ export default {
 
 	plugins: [
 		deskTool({
-			title: 'Settings',
-			name: 'settings',
-			structure: settings
-		}),
-		deskTool({
 			title: 'Newsletter', 
 			name: 'newsletter',
 		}),
 		deskTool({
 			title: 'Products', 
 			name: 'products',
+		}),
+		deskTool({
+			title: 'Settings',
+			name: 'settings',
+			structure: settings
 		}),
 
 		visionTool()
