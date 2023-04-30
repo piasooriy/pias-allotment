@@ -6,9 +6,20 @@ export default {
 	type: 'document', 
 	fields: [
 		{
+			title: 'About', 
+			name: 'about', 
+			type: 'string', 
+		}, 
+		{
+			title: 'Contact', 
+			name: 'contact', 
+			type: 'string', 
+		}, 
+		{
 			title: 'Social Media', 
 			name: 'socialMedia', 
 			type: 'string', 
-		}
+		}, 
+		
 	]
 }
