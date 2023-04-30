@@ -3,7 +3,9 @@ import { visionTool } from '@sanity/vision';
 
 import schemas from './schemas/schemas.js';
 import settings from './schemas/structure/settings.js';
-import newsletter from './schemas/structure/newsletter.js';
+import allotment from './schemas/structure/allotment.js';
+import about from './schemas/structure/about.js';
+
 
 
 export default {
@@ -14,10 +16,16 @@ export default {
 
 	plugins: [
 		deskTool({
-			title: 'Newsletter', 
-			name: 'newsletter',
+			title: 'Allotment', 
+			name: 'allotment',
+			structure: allotment
 		}),
 		
+		deskTool({
+			title: 'About',
+			name: 'about',
+			structure: about
+		}),
 		deskTool({
 			title: 'Settings',
 			name: 'settings',
