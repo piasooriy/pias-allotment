@@ -4,7 +4,7 @@ import { visionTool } from '@sanity/vision';
 import schemas from './schemas/schemas.js';
 import settings from './schemas/structure/settings.js';
 import newsletter from './schemas/structure/newsletter.js';
-import products from './schemas/structure/products.js';
+
 
 export default {
 	title: 'Studio',
@@ -17,10 +17,7 @@ export default {
 			title: 'Newsletter', 
 			name: 'newsletter',
 		}),
-		deskTool({
-			title: 'Products', 
-			name: 'products',
-		}),
+		
 		deskTool({
 			title: 'Settings',
 			name: 'settings',
