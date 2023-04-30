@@ -47,7 +47,8 @@ export default{
 			title: 'Description', 
 			name: 'description', 
 			type: 'text', 
-			validation: rule => rule.required(), 
+			validation: rule => rule.required(),
+			vaidation: rule => rule.max(500).warning('Max 500 characters'),
 		}, 
 		
 	]
