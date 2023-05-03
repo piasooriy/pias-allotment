@@ -1,0 +1,25 @@
+:root {
+	--color-background: #F1EFE6;
+	--color-foreground: #29421A;
+	--color-highlight: #29421A;
+
+
+	--color-box-foreground: var(--color-foreground);
+	--color-box-background: var(--color-background);
+
+
+	/* Using Alejandro's "specsavers-webshop" example
+	for these variables*/
+	/* Make sure to alter these depending on need, and 
+	add more variables, better to have more and then 
+	smush them together, than having too few... */
+	
+	--gap-column: 1rem;
+	--gap-padding: 1rem;
+	--gap-row: 1rem;
+	--gap-section: 2rem; 
+
+
+	--gap-box-padding: 1rem;
+	--gap-button-padding: 0.5rem;
+}
