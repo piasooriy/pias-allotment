@@ -1,3 +1,17 @@
+body {
+	font-family: 'IBM Plex Mono', monospace;
+	font-size: 1.5vw;
+	background: var(--color-background);
+	color: var(--color-foreground);
+	padding: var(--gap-padding);
+	/* Want all the text to have capital letters
+	it looks more modern - or so says Alejandro */
+	text-transform: uppercase;
+	/* Just making the font a little fatter, 
+	makes it look just the way it looks in figma!! */
+	-webkit-font-smoothing:antialiased;
+}
+
 a:hover {
 	text-decoration: underline;
 }
