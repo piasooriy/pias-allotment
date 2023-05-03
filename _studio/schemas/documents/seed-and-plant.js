@@ -32,17 +32,27 @@ export default {
 			] 
 		}, 
 		{
-			title: 'Price', 
-			name: 'price', 
-			type: 'number', 
-			description: 'Enter price for plant or seed her in NOK'
+			title: 'Metadata', 
+			name: 'metadata', 
+			type: 'object',
+			options: {columns: 2},
+			fields: [
+					{
+						title: 'Price', 
+						name: 'price', 
+						type: 'number', 
+						description: 'Enter price for plant or seed her in NOK'
+					},
+					{
+						title: 'Stock', 
+						name: 'stock', 
+						type: 'number', 
+						description: 'Enter stock available',
+						validation: rule => rule.required(),
+					}, 
+			]
 		},
-		{
-			title: 'Stock', 
-			name: 'stock', 
-			type: 'number', 
-			validation: rule => rule.required(),
-		}, 
+
 		{
 			title: 'Family', 
 			name: 'family', 
