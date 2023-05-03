@@ -1,0 +1,44 @@
+*, 
+* ::before, 
+* ::after{
+	box-sizing: border-box;
+}
+
+* {
+	margin: 0;
+	padding: 0;
+}
+
+a {
+	color: inherit;
+	text-decoration: none;
+	/* Removing default styling on links, 
+	we don't want any blue or purple links */
+}
+
+img, 
+video, 
+canvas {
+	display: block;
+	width: 100%;
+	/* Making sure that the images, videos are visible
+	and are 100% the widht of the parent */
+}
+
+button, 
+select {
+	cursor: pointer;
+}
+
+button, 
+input, 
+select {
+	font: inherit;
+	color: inherit;
+	text-transform: transparent;
+	border: 0;
+}
+
+ul {
+	list-style-type: none;
+}
