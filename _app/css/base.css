@@ -1,6 +1,11 @@
 body {
 	font-family: 'IBM Plex Mono', monospace;
-	font-size: 1.5vw;
+	/* 
+	font-size: 16px;
+	Don't use a pre-set font size, it will not be responsive
+	when user chooses font-size, i.e. example for VG. 
+	The browser will define the size based on what the client chooses.
+	If you need bigger font size, use %! */
 	background: var(--color-background);
 	color: var(--color-foreground);
 	padding: var(--gap-padding);
@@ -18,7 +23,12 @@ a:hover {
 
 @media (max-width: 1024px) {
 	/* Ask Carlo about what the difference between
-	@media og @media screen is during 1:1 */
+	@media og @media screen is during 1:1
+	
+	** write media screen and () instead of media, because 
+	media can be multiple things, like print(where you can have display none
+	on like the header and footer*/
+
 	body {
 		font-size: 5vw;
 	}
