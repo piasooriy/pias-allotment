@@ -34,6 +34,12 @@ export default async function seedAndSupply() {
 			productCard.className = 'product__card';
 			productBox.className = 'product__box';
 
+			/* By using className you remove the other classnames and use
+			only the one that you make here. If you use classList it just
+			adds on top of the other classnames. If we need a toggle function
+			we need to have an classlist(i.e. when using add eventlistener with
+			--block or --hidden) */
+
 			productImage.className = 'product__image';
 			productImage.src = product.image;
 			productImage.alt = product.altText;
