@@ -1,3 +1,3 @@
-import seedAndPlant from "./modules/seed-supply-list.js";
+import seedAndSupply from "./modules/seed-supply-list.js";
 
-seedAndPlant();
+seedAndSupply();
