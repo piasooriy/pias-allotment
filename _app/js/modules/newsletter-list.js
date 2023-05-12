@@ -26,7 +26,10 @@ export default async function newsletterList() {
 
 			newsletterListContainer.appendChild(newsletterCard);
 			newsletterListContainer.appendChild(newsletterTitle);
+			newsletterCard.appendChild(newsletterBox);
 			newsletterBox.appendChild(newsletterImage);
+			
+
 
 			newsletterCard.className = 'newsletter__card';
 			newsletterBox.className = 'newsletter__box';
