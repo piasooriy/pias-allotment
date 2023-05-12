@@ -3,15 +3,9 @@ import {sanity} from "../sanity.js";
 export default async function seedAndSupply() {
 	const query = `*[_type == 'seedAndPlant']{  
 		title, 
-		"image": image.asset->url,  
-		"altText": image.alt,
+		"image": picture.asset->url,  
+		"altText": picture.alt,
 		slug,
-		"supply": *[_type == 'supply']{  
-			title, 
-			"image": image.asset->url,  
-			"altText": image.alt,
-			slug,
-			 }
 		 }`;	 
 
 	const products = await sanity.fetch(query);
