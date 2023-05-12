@@ -1,0 +1,14 @@
+.newsletter__card{
+	background-color: pink;
+	object-fit: cover;
+	margin: 1rem;
+}
+
+@media screen and (max-width: 1024px) {
+	.newsletter__card{
+		width: 90%;
+		padding: 1rem;
+		margin: 5%;
+	}
+
+}
