@@ -15,7 +15,7 @@ export default async function newsletterList() {
 	
 	function createNewsletterListContainerDOM() {
 	const newsletterListContainer = document.createElement('div');
-	newsletterListContainer.className = 'newsletter-list';
+	newsletterListContainer.className = 'newsletter-list grid';
 	
 	
 		for (const newsletter of newsletters) {
@@ -25,13 +25,13 @@ export default async function newsletterList() {
 			const newsletterTitle = document.createElement('figcaption');
 
 			newsletterListContainer.appendChild(newsletterCard);
-			newsletterListContainer.appendChild(newsletterTitle);
 			newsletterCard.appendChild(newsletterBox);
+			newsletterCard.appendChild(newsletterTitle);
 			newsletterBox.appendChild(newsletterImage);
 			
 
 
-			newsletterCard.className = 'newsletter__card';
+			newsletterCard.className = 'newsletter__card grid__column--3';
 			newsletterBox.className = 'newsletter__box';
 
 			newsletterImage.className = 'newsletter__image';

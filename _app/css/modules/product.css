@@ -1,0 +1,16 @@
+.product__card{
+	background-color: pink;
+	object-fit: cover;
+	margin: 1rem;
+}
+
+
+
+@media screen and (max-width: 1024px) {
+	.product__card{
+		width: 90%;
+		padding: 1rem;
+		margin: 5%;
+	}
+
+}
