@@ -11,9 +11,6 @@ export default async function seedAndSupply() {
 	const products = await sanity.fetch(query);
 	
 	console.log(products);
-
-	/* Able to fetch, but not the images.. 
-	getting a 404 error, need to look at that */
 	
 	function createproductListContainerDOM() {
 	const productListContainer = document.createElement('div');
