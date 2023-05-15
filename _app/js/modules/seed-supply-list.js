@@ -1,11 +1,15 @@
 import {sanity} from "../sanity.js";
+import { readSlug } from "../util/utils.js";
 
 export default async function seedAndSupply() {
+	const slug = readSlug();
+	if(slug === undefined) {
+
 	const query = `*[_type == 'seedAndPlant']{  
 		title, 
 		"image": picture.asset->url,  
 		"altText": picture.alt,
-		slug,
+		"slug": slug.current
 		 }`;	 
 
 	const products = await sanity.fetch(query);
@@ -22,7 +26,6 @@ export default async function seedAndSupply() {
 		} 
 	 */
 
-
 	console.log(products);
 /***
  * @todo Move all fetch functions outside of the module, easier to 
@@ -37,10 +40,13 @@ export default async function seedAndSupply() {
 	productListContainer.className = 'product-list grid';
 
 		for (const product of products) {
-			const productCard = document.createElement('div');
+			const productCard = document.createElement('a');
 			const productBox = document.createElement ('figure'); 
 			const productImage = document.createElement('img');
 			const productTitle = document.createElement('figcaption');
+
+			productCard.setAttribute('href', `/product/?${product.slug}`);
+			
 
 			productListContainer.appendChild(productCard);
 			productCard.appendChild(productBox)
@@ -69,11 +75,20 @@ export default async function seedAndSupply() {
 	}
 	
 	function renderHTML(){
+
+		/**
+		 * 
+		 * @todo Make a classname for main(different one for each
+		 * page) and use queryselector to access it in js!!!
+		 */
+		const mainElement = document.querySelector('main');
 		const productListContainer = createproductListContainerDOM();
-		document.body.appendChild(productListContainer);
+		mainElement.appendChild(productListContainer);
 	}		
 
 	renderHTML();
+
+}
 	
 };
 

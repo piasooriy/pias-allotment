@@ -29,8 +29,6 @@ export default async function newsletterList() {
 			newsletterCard.appendChild(newsletterTitle);
 			newsletterBox.appendChild(newsletterImage);
 			
-
-
 			newsletterCard.className = 'newsletter__card grid__column--3';
 			newsletterBox.className = 'newsletter__box';
 
@@ -47,8 +45,9 @@ export default async function newsletterList() {
 	}
 	
 	function renderHTML(){
+		const newsletterElement = document.querySelector('.newsletter-container')
 		const newsletterListContainer = createNewsletterListContainerDOM();
-		document.body.appendChild(newsletterListContainer);
+		newsletterElement.appendChild(newsletterListContainer);
 	}		
 
 	renderHTML();
