@@ -1,3 +1,4 @@
+import FrontPageContent from "./modules/front-page.js";
 import NewsletterList from "./modules/newsletter-list.js";
 import SeedAndSupply from "./modules/seed-supply-list.js";
 import GetProduct from "./modules/product.js";
@@ -6,6 +7,7 @@ import FetchSettings from "./modules/fetch-settings.js";
 import FetchAbout from "./modules/fetch-about.js";
 
 
+FrontPageContent();
 NewsletterList();
 SeedAndSupply();
 GetProduct();
