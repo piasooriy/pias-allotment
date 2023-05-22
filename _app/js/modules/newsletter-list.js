@@ -8,6 +8,11 @@ export default async function NewsletterList() {
 		slug,
 	 }`;
  */
+/***
+ * @Note Tried moving the query in a seperate fetch module
+ * to make sure that I can reuse the query easily for other
+ * things too!
+ */
 
 	//change query to newsletterQuery
 	const newsletters = await FetchNewsletter();
