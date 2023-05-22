@@ -1,17 +1,18 @@
-import {sanity} from "../sanity.js";
+import FetchNewsletter from "../modules/fetch-newsletter.js";
 
-export default async function newsletterList() {
-	const query = `*[_type == 'newsletter']{
+export default async function NewsletterList() {
+	/* const query = `*[_type == 'newsletter']{
 		title,
 		"image": image.asset->url,  
 		"altText": image.alt,
 		slug,
 	 }`;
+ */
 
-
-	const newsletters = await sanity.fetch(query);
-	
-	console.log(newsletters);
+	//change query to newsletterQuery
+	const newsletters = await FetchNewsletter();
+	 
+	//console.log(newsletters);
 	
 	function createNewsletterListContainerDOM() {
 	const newsletterListContainer = document.createElement('div');
@@ -45,7 +46,7 @@ export default async function newsletterList() {
 	}
 	
 	function renderHTML(){
-		const newsletterElement = document.querySelector('.newsletter-container')
+		const newsletterElement = document.querySelector('.newsletter-container');
 		const newsletterListContainer = createNewsletterListContainerDOM();
 		newsletterElement.appendChild(newsletterListContainer);
 	}		

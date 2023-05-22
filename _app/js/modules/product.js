@@ -1,11 +1,11 @@
 import { readSlug } from "../util/utils.js";
 
-export default async function getProduct() {
+export default async function GetProduct() {
 
 
 	const slug = readSlug();
 
-	console.log(slug);
+	//console.log(slug);
 
 	if(slug !== undefined) {
 		console.log(slug);

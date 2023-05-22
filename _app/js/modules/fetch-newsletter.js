@@ -1,0 +1,15 @@
+import { sanity } from "../sanity.js";
+
+export default async function FetchNewsletter() {
+	const newsletterQuery = `*[_type == 'newsletter']{
+		title,
+		"image": image.asset->url,  
+		"altText": image.alt,
+		slug,
+	 }`;
+	const newsletters = await sanity.fetch(newsletterQuery);
+
+	//console.log('hei')
+
+	return newsletters;
+}

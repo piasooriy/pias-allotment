@@ -1,18 +1,19 @@
-import {sanity} from "../sanity.js";
+import FetchProduct from "../modules/fetch-product.js";
 import { readSlug } from "../util/utils.js";
 
-export default async function seedAndSupply() {
+export default async function SeedAndSupply() {
 	const slug = readSlug();
 	if(slug === undefined) {
-
+/* 
 	const query = `*[_type == 'seedAndPlant']{  
 		title, 
 		"image": picture.asset->url,  
 		"altText": picture.alt,
 		"slug": slug.current
-		 }`;	 
+		 }`;	 */ 
 
-	const products = await sanity.fetch(query);
+	//const products = await sanity.fetch(query);
+	const products = await FetchProduct();
 	
 	/*****
 	 * @todo How to include the fetch of supplies in the query?
@@ -26,7 +27,7 @@ export default async function seedAndSupply() {
 		} 
 	 */
 
-	console.log(products);
+	//console.log(products);
 /***
  * @todo Move all fetch functions outside of the module, easier to 
 	reasue the fetch for other modules, in case you need it to make a 
@@ -81,7 +82,7 @@ export default async function seedAndSupply() {
 		 * @todo Make a classname for main(different one for each
 		 * page) and use queryselector to access it in js!!!
 		 */
-		const mainElement = document.querySelector('main');
+		const mainElement = document.querySelector('.seed__and-supplies');
 		const productListContainer = createproductListContainerDOM();
 		mainElement.appendChild(productListContainer);
 	}		
