@@ -1,8 +1,43 @@
 
-
 .footer__nav{
-	border-top: solid 0.2rem;
+	border-top: solid 0.2rem var(--color-foreground);
 	font-size: 1rem;
 	margin-bottom: 2rem;
 	padding: 1rem;
+	color: var(--color-foreground);
+}
+
+.footer__nav-menu-about{
+	color: var(--color-accent);
+}
+
+.footer__nav-menu-recommendations{
+	color: var(--color-accent);
+}
+
+.footer__nav-menu-youtube{
+	color: var(--color-accent);
+}
+
+.footer__nav-menu-subscription{
+	margin-left: 15rem;
+	
+}
+.footer__nav-menu-subscription-submit{
+	margin: 1rem;
+}
+.footer__nav-menu-subscription-submit-email{
+	border: solid var(--color-foreground) 1px;
+	border-radius: 1rem;
+	width: 12rem;
+	color: var(--color-accent);
+	text-transform: uppercase;
+}
+
+.footer__nav-menu-subscription-sumbit-button{
+	background-color: var(--color-foreground);
+	color: var(--color-background);
+	border-radius: 1rem;
+	width: 6rem;
+	text-transform: uppercase;
 }
