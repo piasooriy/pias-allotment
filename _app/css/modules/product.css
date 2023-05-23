@@ -1,5 +1,5 @@
 .product__card{
-	background-color: pink;
+	background-color: var(--color-box-background);
 	object-fit: cover;
 	margin: 1rem;
 }

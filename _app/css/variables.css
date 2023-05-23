@@ -1,8 +1,7 @@
 :root {
-	--color-background: #F1EFE6;
+	--color-background: #f0eee5;
 	--color-foreground: #29421A;
-	--color-highlight: #29421A;
-
+	--color-accent:#bdd42b;
 
 	--color-box-foreground: var(--color-foreground);
 	--color-box-background: var(--color-background);
