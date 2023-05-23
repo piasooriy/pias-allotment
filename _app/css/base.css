@@ -22,7 +22,8 @@ main {
 }
 
 a:hover {
-	text-decoration: underline;
+	text-decoration: underline var(--color-accent);
+	
 }
 
 @media (max-width: 1024px) {
