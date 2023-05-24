@@ -4,7 +4,7 @@ import { readSlug } from "../util/utils.js";
 export default async function SeedAndSupply() {
 	const slug = readSlug();
 	if(slug === undefined) {
-/* 
+	/* 
 	const query = `*[_type == 'seedAndPlant']{  
 		title, 
 		"image": picture.asset->url,  
@@ -15,30 +15,20 @@ export default async function SeedAndSupply() {
 	//const products = await sanity.fetch(query);
 	const products = await FetchProduct();
 	
-	/*****
-	 * @todo How to include the fetch of supplies in the query?
-	 * it would be easier if I could fetch all the supplies and seeds/plants as products. 
-	 * and then perhaps filter it according to either seedAndPlant type or supply type.
-	 * *[_type == 'supply']{   
-		title, 
-		"image": image.asset->url,  
-		"altText": image.alt,
-		slug,
-		} 
-	 */
 
 	//console.log(products);
-/***
- * @todo Move all fetch functions outside of the module, easier to 
-	reasue the fetch for other modules, in case you need it to make a 
-	seperate search filter, etc. You can import it the way you do
-	{sanity}
- */
+	
+	/**
+	 * 
+	 * @NOTE Moved the fetch call to seperate function -> 
+	 * @SEE fetch-products under modules!!
+	 */		 
 	
 	
 	function createproductListContainerDOM() {
 	const productListContainer = document.createElement('div');
-	productListContainer.className = 'product-list grid';
+	productListContainer.classList.add('product-list');
+	productListContainer.classList.add('grid');
 
 		for (const product of products) {
 			const productCard = document.createElement('a');
@@ -47,27 +37,39 @@ export default async function SeedAndSupply() {
 			const productTitle = document.createElement('figcaption');
 
 			productCard.setAttribute('href', `/product/?${product.slug}`);
-			
+			/**
+			 * 
+			 * @NOTE Making a link based on the slug here, which can be 
+			 * accessed when hovering over and/or clicked on productCard 
+			 * due to function readSlug in utils(under util).
+			 */
 
 			productListContainer.appendChild(productCard);
 			productCard.appendChild(productBox)
 			productCard.appendChild(productTitle);
 			productBox.appendChild(productImage);
 
-			productCard.className = 'product__card grid__column--3';
-			productBox.className = 'product__box';
+			productCard.classList.add('product__card');
+			productCard.classList.add('grid__column--3');
+			productBox.classList.add('product__box');
 
-			/* By using className you remove the other classnames and use
+			/**
+			 * 
+			 * @Note By using className you remove the other classnames and use
 			only the one that you make here. If you use classList it just
 			adds on top of the other classnames. If we need a toggle function
 			we need to have an classlist(i.e. when using add eventlistener with
-			--block or --hidden) */
+			--block or --hidden, which adds a classname on top of exsisting classname).
+			Since I am generating everything in js I could 
+			use classname = 'product__box', but I decided to keep using classlist
+			to make it more coherent with everything else in the project. 
+			 */
 
-			productImage.className = 'product__image';
+			productImage.classList.add('product__image');
 			productImage.src = product.image;
 			productImage.alt = product.altText;
 
-			productTitle.className = 'product__title';
+			productTitle.classList.add('product__title');
 			productTitle.innerText = product.title;
 		}
 
@@ -79,8 +81,10 @@ export default async function SeedAndSupply() {
 
 		/**
 		 * 
-		 * @todo Make a classname for main(different one for each
-		 * page) and use queryselector to access it in js!!!
+		 * @NOTE Made a classname for main in index(different one for each
+		 * page) and used queryselector to access it in js, this
+		 * is to minimize the files in js, I just import all of these
+		 * in main.js!!!
 		 */
 		const mainElement = document.querySelector('.seed__and-supplies');
 		const productListContainer = createproductListContainerDOM();

@@ -28,9 +28,24 @@ export default async function FetchProduct() {
 		description, 
 		metadata, 
 		 }`;	 
+
+	 /*****
+	 * @todo How to include the fetch of supplies in the query?
+	 * it would be easier if I could fetch all the supplies and seeds/plants as products. 
+	 * and then perhaps filter it according to either seedAndPlant type or supply type.
+	 * *[_type == 'supply']{   
+		title, 
+		"image": image.asset->url,  
+		"altText": image.alt,
+		slug,
+		} 
+	 */
+
 	
 	const products = await sanity.fetch(seedAndPlantQuery, SupplyQuery);
 
 	return products;
+
+	
 	
 }
