@@ -8,20 +8,19 @@ export default async function NewsletterList() {
 		slug,
 	 }`;
  */
-/***
- * @Note Tried moving the query in a seperate fetch module
- * to make sure that I can reuse the query easily for other
- * things too!
- */
+	/***
+	 * @Note  Moved sanity.fetch() call to seperate function under modules,
+	 * Makes it easier to use with other functions.
+	 */
 
-	//change query to newsletterQuery
 	const newsletters = await FetchNewsletter();
 	 
 	//console.log(newsletters);
 	
 	function createNewsletterListContainerDOM() {
 	const newsletterListContainer = document.createElement('div');
-	newsletterListContainer.className = 'newsletter-list grid';
+	newsletterListContainer.classList.add('newsletter-list');
+	newsletterListContainer.classList.add('grid');
 	
 	
 		for (const newsletter of newsletters) {
@@ -35,14 +34,15 @@ export default async function NewsletterList() {
 			newsletterCard.appendChild(newsletterTitle);
 			newsletterBox.appendChild(newsletterImage);
 			
-			newsletterCard.className = 'newsletter__card grid__column--3';
-			newsletterBox.className = 'newsletter__box';
+			newsletterCard.classList.add('newsletter__card');
+			newsletterCard.classList.add('grid__column--3');
+			newsletterBox.classList.add ('newsletter__box');
 
-			newsletterImage.className = 'newsletter__image';
+			newsletterImage.classList.add('newsletter__image');
 			newsletterImage.src = newsletter.image;
 			newsletterImage.alt = newsletter.altText;
 
-			newsletterTitle.className = 'newsletter__title';
+			newsletterTitle.classList.add('newsletter__title');
 			newsletterTitle.innerText = newsletter.title;
 		}
 
