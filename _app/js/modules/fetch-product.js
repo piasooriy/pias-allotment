@@ -8,7 +8,7 @@ export default async function FetchProduct() {
 		productFormat,
 		durability,  
 		"image": picture.asset->url,  
-		"altText": image.alt,
+		"altText": picture.alt,
 		"slug":slug.current,
 		description, 
 		"stock": metadata.stock, 
