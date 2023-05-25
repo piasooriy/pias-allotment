@@ -57,12 +57,14 @@ export default async function SeedAndSupply() {
 			 * 
 			 * @Note By using className you remove the other classnames and use
 			only the one that you make here. If you use classList it just
-			adds on top of the other classnames. If we need a toggle function
+			adds on top of the other classnames. If we need i.e. a toggle function
 			we need to have an classlist(i.e. when using add eventlistener with
-			--block or --hidden, which adds a classname on top of exsisting classname).
+			--block or --hidden, which adds a classname on top of exsisting classname, without
+			removing it).
 			Since I am generating everything in js I could 
 			use classname = 'product__box', but I decided to keep using classlist
-			to make it more coherent with everything else in the project. 
+			to make it more coherent with everything else in the project, and who
+			knows, maybe I want to make everything toggle-ble in the future?. 
 			 */
 
 			productImage.classList.add('product__image');
