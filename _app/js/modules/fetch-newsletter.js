@@ -6,7 +6,7 @@ export default async function FetchNewsletter() {
 		title,
 		"image": image.asset->url,  
 		"altText": image.alt,
-		slug,
+		"slug":slug.current,
 	 }`;
 	const newsletters = await sanity.fetch(newsletterQuery);
 
