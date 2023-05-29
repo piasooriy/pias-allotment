@@ -28,7 +28,7 @@ export default async function FrontPageContent() {
 
 		/**
 		 * 
-		 * @Note Since I am trying to access the first and only item in the array
+		 * @NOTE Since I am trying to access the first and only item in the array
 		 * (which can be found in the console when logging settings)
 		 * I need to make sure that I choose those with '[0]' !!
 		 * https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array
@@ -59,7 +59,7 @@ export default async function FrontPageContent() {
  */
 
 /* try {
-	console.log(aboutUs)
+	//console.log(aboutUs)
 	handleResponses(aboutUs);
 } catch (error) {
 	handleError(error);
