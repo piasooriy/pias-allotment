@@ -9,7 +9,7 @@ operningHours
  }`;
 const about = await sanity.fetch(aboutQuery);
 
-//console.log(about);
+////console.log(about);
 
 return about;
 }

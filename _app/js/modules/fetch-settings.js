@@ -12,7 +12,7 @@ export default async function FetchSettings() {
 
 
 	const settings = await sanity.fetch(settingsQuery);
-	//console.log(settings)
+	////console.log(settings)
 
 	return settings;
 

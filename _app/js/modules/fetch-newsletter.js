@@ -10,7 +10,7 @@ export default async function FetchNewsletter() {
 	 }`;
 	const newsletters = await sanity.fetch(newsletterQuery);
 
-	//console.log('hei')
+	////console.log('hei')
 
 	return newsletters;
 }
