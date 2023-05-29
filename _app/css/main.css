@@ -4,8 +4,10 @@
 @import './fonts.css';
 @import './grid.css';
 
+
 @import './modules/header.css';
 @import './modules/footer.css';
 @import './modules/product.css';
 @import './modules/newsletters.css';
 @import './modules/front-page.css';
+@import './modules/single-product.css';

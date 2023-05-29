@@ -2,8 +2,9 @@ export function readSlug() {
 	const allUrl = window.location.href;
 	if(allUrl.includes('product')) {
 		return window.location.search.slice(1)
-	}
-	return undefined;
+	} if (allUrl.includes('newsletter-post')) {
+      return window.location.search.slice(1)
+   } return undefined;
  }
 
  /**

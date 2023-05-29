@@ -15,7 +15,7 @@ export default async function NewsletterList() {
 
 	const newsletters = await FetchNewsletter();
 	 
-	//console.log(newsletters);
+	////console.log(newsletters);
 	
 	function createNewsletterListContainerDOM() {
 	const newsletterListContainer = document.createElement('div');
@@ -24,10 +24,12 @@ export default async function NewsletterList() {
 	
 	
 		for (const newsletter of newsletters) {
-			const newsletterCard = document.createElement('div');
+			const newsletterCard = document.createElement('a');
 			const newsletterBox = document.createElement ('figure'); 
 			const newsletterImage = document.createElement('img');
 			const newsletterTitle = document.createElement('figcaption');
+
+			newsletterCard.setAttribute('href', `/newsletter-post/?${newsletter.slug}`)
 
 			newsletterListContainer.appendChild(newsletterCard);
 			newsletterCard.appendChild(newsletterBox);
@@ -51,7 +53,7 @@ export default async function NewsletterList() {
 	}
 	
 	function renderHTML(){
-		const newsletterElement = document.querySelector('.newsletter-container');
+		const newsletterElement = document.querySelector('.newsletter');
 		const newsletterListContainer = createNewsletterListContainerDOM();
 		newsletterElement.appendChild(newsletterListContainer);
 	}		
