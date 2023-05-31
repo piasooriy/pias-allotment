@@ -4,6 +4,57 @@
 	margin: 1rem;
 }
 
+
+
+.newsletter__container-box{
+	width: 50rem;
+	margin-left: 25%;
+	margin-right: 25%;
+  }
+
+
+.newsletter__container-image{
+	width: 25rem;
+	margin: 1rem;
+	margin-left: 25%;
+	margin-right: 25%;
+  }
+  .newsletter__container-information-author{
+	margin-left: 15%;
+	margin-right: 15%;
+  }
+  .newsletter__container-box-plant-type{
+	margin-left: 15%;
+	margin-right: 15%;
+  }
+
+.newsletter__container-box-title{
+	font-size: 5rem;
+  }
+
+.newsletter__container-information{
+	margin-left: 25%;
+	margin-right: 25%;
+}  
+
+.newsletter__container-information-description{
+	font-size: 1rem;
+	margin-left: 15%;
+	margin-right: 15%;
+}  
+
+.newsletter__container-box-direction{
+	margin-left: 15%;
+	margin-right: 15%;
+}
+.newsletter__container-box-supply{
+	margin-left: 15%;
+	margin-right: 15%;
+}
+
+
+
+
 @media screen and (max-width: 1024px) {
 	.newsletter__card{
 		width: 90%;
