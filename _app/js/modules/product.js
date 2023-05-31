@@ -38,6 +38,7 @@ export default async function GetProduct() {
 	//console.log(products)
 		
 	const product = products.product;
+	console.log(product)
 	const supply = products.supply;
 
 	if(slug !== undefined) {
@@ -60,17 +61,22 @@ export default async function GetProduct() {
 			productBox.appendChild(productTitle);
 			productBox.appendChild( productImageSingle);
 			productImageSingle.appendChild(productImageSingleURL);
+			productInformation.appendChild(productDescription);
 			productInformation.appendChild(productFamily);
 			productInformation.appendChild(productDurability);
 			productInformation.appendChild(productCategory);
 			productInformation.appendChild(productFormat);
-			productInformation.appendChild(productDescription);
 
 			//console.log(productContainer)
 		
 			productContainer.classList.add('product__container');
+			productContainer.classList.add('grid');
+			productContainer.classList.add('grid__column--12');
 			productBox.classList.add('product__container-box');
+			productBox.classList.add('product__container-box');
+			productBox.classList.add('grid__column--4');
 			productInformation.classList.add('product__container-information');
+			productInformation.classList.add('grid__column--8');
 			/**
 			 * 
 			 * @TODO Figure out why the image is not appearing on 
@@ -111,19 +117,21 @@ export default async function GetProduct() {
 			productTitle.innerText = product[0].title;
 
 			productDescription.classList.add('product__container-information-description');
-			productDescription.innerText = product[0].description;
+			productDescription.classList.add('grid__column--4');
+			productDescription.innerText = 'Description: ' +product[0].description;
 
 			productFamily.classList.add('product__container-information-family');
 			//productFamily.innerText = product[0].family;
 
 			productDurability.classList.add('product__container-information-durability');
-			productDurability.innerText = product[0].durability;
+			productDurability.innerText = 'Durability: ' + product[0].durability;
+			console.log(product[0].durability)
 
 			productCategory.classList.add('product__container-information-category');
-			productCategory.innerText = product[0].category;
+			productCategory.innerText = 'Type: ' + product[0].category;
 
 			productFormat.classList.add('product__container-information-format');
-			productFormat.innerText = product[0].format
+			productFormat.innerText = 'Product-Format: ' + product[0].productFormat
 
 			return productContainer;
 		}
