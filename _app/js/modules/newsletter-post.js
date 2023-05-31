@@ -23,6 +23,8 @@ export default async function GetNewsletterPost() {
 			const newsletterDirection = document.createElement('div');
 			const newsletterPlantType = document.createElement('div');
 			const newsletterSupply = document.createElement('div');
+			const toggleSection = document.querySelector('.newsletter__container-information-toggle-section');
+			const toggleButton = document.querySelector('.newsletter__container-information-toggle-section-button');
 
 			//Appending children to parent
 			newsletterContainer.appendChild(newsletterBox);
@@ -33,8 +35,10 @@ export default async function GetNewsletterPost() {
 			newsletterInformation.appendChild(newsletterPlantType);
 			newsletterInformation.appendChild(newsletterAuthor);
 			newsletterInformation.appendChild(newsletterDescription);
-			newsletterInformation.appendChild(newsletterDirection);
-			newsletterInformation.appendChild(newsletterSupply);
+			newsletterInformation.appendChild(toggleButton);
+			newsletterInformation.appendChild(toggleSection);
+			toggleSection.appendChild(newsletterDirection);
+			toggleSection.appendChild(newsletterSupply);
 
 			//Creating classnames and choosing data from query
 			newsletterContainer.classList.add('newsletter__container');
@@ -45,6 +49,7 @@ export default async function GetNewsletterPost() {
 			newsletterInformation.classList.add('newsletter__information');
 			newsletterInformation.classList.add('grid');
 			newsletterInformation.classList.add('grid__column--12');
+			toggleSection.classList.add('grid__column--12');
 
 			newsletterImageSingleURL.classList.add('newsletter__container-box-image');
 			newsletterImageSingleURL.src = newsletterPost[0].image;
@@ -62,6 +67,10 @@ export default async function GetNewsletterPost() {
 			newsletterAuthor.classList.add('grid__column--12');
 			newsletterAuthor.innerText = 'Author : '+newsletterPost[0].author;
 
+			
+			toggleButton.classList.add('grid__column--12');
+			toggleButton.innerHTML = 'Directions'
+
 			newsletterDirection.classList.add('newsletter__container-box-direction');
 			newsletterDirection.classList.add('grid__column--12');
 			newsletterDirection.innerText = newsletterPost[0].direction;
@@ -76,7 +85,7 @@ export default async function GetNewsletterPost() {
 
 			console.log(newsletterContainer)
 			
-			//returning the node-element,which we will use later
+			//Returning the node-element,which we will use later
 			return newsletterContainer;
 
 		}
