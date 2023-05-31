@@ -1,0 +1,47 @@
+# Meeting notes/sprint reviews
+
+||2023-04-27||
+Attendees: ***
+Notes: Today was focused on what out MVP is. 
+Folder and repository. 
+Planned out “datamodellering” on DB diagram. 
+
+For the next sprint: 
+- Folder structure needs to be in place.
+- Install sanity under _studio.
+- Make schemas
+- Deploy to netlify
+- Create Prototype
+- Set up github projects
+
+||2023-05-10||
+
+Attendees: ***
+
+Notes: Created Sanity schemas and structure, and deployed it. 
+Added grid styling-sheet, which can be used with classnames. 
+Made fetch-modules for newsletter, products, etc. 
+Rendered newsletter and seedAndSupply. 
+Styled the cards for newsletter and frontpage in render. 
+We are up and above the MVP which was just to make a list of newsletters.
+
+For the next sprint: 
+- Create footer.
+- Add mediaQueries
+- Make clickable links for the cards which redirects to a new dynamic slug-based window.
+
+||2023-05-30||
+
+Attendees: ***
+
+Notes: Created Footer. Added mediaQueries to newsletter and product page. 
+Made a “on-click-to-new-window” function which suprisingly works. 
+Tweaked the page a little more than what was originally in the prototype. 
+Decided to not have the shop-version for seed and supply (with add basket and prices). 
+But the information is there for scalability purposes. 
+Made validation for email-input (would be nice to post to sanity, 
+but I don’t think I have the time to do that). 
+
+Last minute touches: 
+- Style the slugged-pages.
+- Maybe see if I can implement a search function? Highly doubt it, but could be fun to try.
