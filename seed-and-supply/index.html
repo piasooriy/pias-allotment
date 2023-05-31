@@ -10,7 +10,7 @@
 
 			<title>Pia's Allotment</title>
 			<link rel="stylesheet" href="/_app/css/main.css">
-			<script type="module" src="/_app/js/main.js"></script>
+			<script type="module" src="/_app/js/main-seed-supply.js"></script>
 		</head>
 		<body>
 			<header class="header">
@@ -54,11 +54,21 @@
 						</li>
 					
 						<div class="footer__nav-menu-subscription grid__column--4">
-							<p class="footer__nav-menu-subscription-sumbit-description">a newsletter.adventures.unsolicited advice.</p>
-							<div class="footer__nav-menu-subscription-sumbit">
-								<input class="footer__nav-menu-subscription-submit-email" type="text">
+							<form class="footer__nav-menu-subscription-sumbit">
+								<label class="footer__nav-menu-subscription-sumbit-description">a newsletter.adventures.unsolicited advice.</label>
+								<input class="footer__nav-menu-subscription-submit-email" 
+								type="email" 
+								placeholder="enter-email" 
+								size="50" 
+								minlength="3" 
+								maxlength="64" 
+								required>
+								<!-- https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input/email 
+								https://developer.mozilla.org/en-US/docs/Learn/Forms/Form_validation-->
+								<!-- <span class="error" aria-live="polite"></span> -->
+								<!-- https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/ARIA_Live_Regions#basic_examples_aria-atomic -->
 								<button class="footer__nav-menu-subscription-sumbit-button" type="submit">Subscribe</button>
-							</div>
+							</form>
 						</div>
 					</menu>
 				</nav>

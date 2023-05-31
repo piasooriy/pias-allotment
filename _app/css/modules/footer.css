@@ -45,3 +45,19 @@
 	width: 6rem;
 	text-transform: uppercase;
 }
+
+/* Tried setting up some sort of validation,
+https://developer.mozilla.org/en-US/docs/Learn/Forms/Form_validation#the_required_attribute */
+
+input:invalid {
+	box-shadow: 0 0 0.2rem red;
+ }
+ 
+ input:invalid:required {
+	background-image: linear-gradient(to right, var(--color-background), var(--color-accent));
+ }
+ 
+ input:valid {
+	border: 2px solid black;
+ }
+ 
