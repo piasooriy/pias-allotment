@@ -21,16 +21,7 @@ export default async function FetchSingleProduct(){
 		"family": family._ref,  
 		category,
 	 },
-	 "supply": *[_type == 'supply']{
-		_id,
-		  title, 
-		  _type, 
-		  "image": image.asset ->url,
-		  "altText": image.alt,
-		  "slug": slug.current,
-		  description,
-		  metadata
-	}
+	
 	}`;
 	/**
 	 * @TODO Figure out why the query does not work when I add && slug.current == "${slug}"

@@ -5,6 +5,40 @@
 }
 
 
+.product__container-box{
+ width: 25rem;
+ margin: 1rem;
+}
+
+.product__container-image{
+	margin: 1rem;
+}
+
+.product__container-box-title{
+	font-size: 3rem;
+	margin-bottom: 1rem;
+	margin-left: 1rem;
+}
+.product__container-information{
+ margin: 1rem;
+}
+.product__container-information-description{
+	margin-left: 10rem;
+	margin-top: 5rem;
+	margin-right:10rem ;
+	margin-bottom: 2rem;
+	
+}
+ .product__container-information-durability{
+	margin-left: 10rem;
+} 
+.product__container-information-category{
+	margin-left: 10rem;
+}
+.product__container-information-format{
+	margin-left: 10rem;
+}
+
 
 @media screen and (max-width: 1024px) {
 	.product__card{
