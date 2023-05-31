@@ -8,6 +8,8 @@ import FetchSettings from "./modules/fetch-settings.js"; */
 
 //Render
 import FrontPageContent from "./modules/front-page.js";
+import EmailInput from "./modules/email-input.js";
+
 /* import NewsletterList from "./modules/newsletter-list.js";
 import SeedAndSupply from "./modules/seed-supply-list.js";
 import GetProduct from "./modules/product.js";
@@ -20,6 +22,7 @@ FetchSingleNewsletterPost(); */
 //FetchAbout();
 
 FrontPageContent();
+EmailInput();
 /* NewsletterList();
 SeedAndSupply();
 GetProduct();
