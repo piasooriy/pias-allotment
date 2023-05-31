@@ -11,6 +11,7 @@ export default async function GetNewsletterPost() {
 	if (slug !== undefined) {
 		console.log(slug);
 		function createDynamicNewsletterPageDOM(){
+			//Creating HTML elements
 			const newsletterContainer = document.createElement('div');
 			const newsletterBox = document.createElement('div');
 			const newsletterInformation = document.createElement('div');
@@ -23,6 +24,7 @@ export default async function GetNewsletterPost() {
 			const newsletterPlantType = document.createElement('div');
 			const newsletterSupply = document.createElement('div');
 
+			//Appending children to parent
 			newsletterContainer.appendChild(newsletterBox);
 			newsletterContainer.appendChild(newsletterInformation);
 			newsletterBox.appendChild(newsletterTitle);
@@ -34,9 +36,15 @@ export default async function GetNewsletterPost() {
 			newsletterInformation.appendChild(newsletterDirection);
 			newsletterInformation.appendChild(newsletterSupply);
 
+			//Creating classnames and choosing data from query
 			newsletterContainer.classList.add('newsletter__container');
-			newsletterBox.classList.add('newsletter__box');
+			newsletterContainer.classList.add('grid');
+			newsletterContainer.classList.add('grid__column--12');
+			newsletterBox.classList.add('newsletter__container-box');
+			newsletterBox.classList.add('grid__coloumn--8');
 			newsletterInformation.classList.add('newsletter__information');
+			newsletterInformation.classList.add('grid');
+			newsletterInformation.classList.add('grid__column--12');
 
 			newsletterImageSingleURL.classList.add('newsletter__container-box-image');
 			newsletterImageSingleURL.src = newsletterPost[0].image;
@@ -47,25 +55,33 @@ export default async function GetNewsletterPost() {
 			newsletterTitle.innerText = newsletterPost[0].title;
 
 			newsletterDescription.classList.add('newsletter__container-information-description');
-			newsletterDescription.innerText = newsletterPost[0].descriptiveText;
+			newsletterDescription.classList.add('grid__column--12');
+			newsletterDescription.innerText = 'Description: '+ newsletterPost[0].descriptiveText;
 
 			newsletterAuthor.classList.add('newsletter__container-information-author');
+			newsletterAuthor.classList.add('grid__column--12');
 			newsletterAuthor.innerText = 'Author : '+newsletterPost[0].author;
 
-			newsletterDirection.classList.add('newsletter__container-box-title');
+			newsletterDirection.classList.add('newsletter__container-box-direction');
+			newsletterDirection.classList.add('grid__column--12');
 			newsletterDirection.innerText = newsletterPost[0].direction;
 
 			newsletterPlantType.classList.add('newsletter__container-box-plant-type');
+			newsletterPlantType.classList.add('grid__column--12');
 			newsletterPlantType.innerText = newsletterPost[0].seedAndPlant;
 
 			newsletterSupply.classList.add('newsletter__container-box-supply');
-			newsletterSupply.innerHTML = newsletterPost[0].supply;
+			newsletterSupply.classList.add('grid__column--12');
+			newsletterSupply.innerHTML = 'Supplies you will need: '+ newsletterPost[0].supply;
 
 			console.log(newsletterContainer)
+			
+			//returning the node-element,which we will use later
 			return newsletterContainer;
 
 		}
 
+		//Function which renders newsletter-post
 		function renderHTML () {
 			const newsletterSinglePost = document.querySelector('.newsletter__container');
 			const newsletterContainer = createDynamicNewsletterPageDOM();
