@@ -44,6 +44,11 @@ export default async function GetProduct() {
 	if(slug !== undefined) {
 		console.log(slug);
 		function createDynamicProductPageDOM(){
+			/**
+			 * @SEE https://developer.mozilla.org/en-US/docs/Web/API/Element#instance_properties
+			 * @NOTE To understand more of node elements
+			 */
+			//Creating HTML elements
 			const productContainer = document.createElement('div');
 			const productBox = document.createElement('div');
 			const productInformation = document.createElement('div');
@@ -55,20 +60,31 @@ export default async function GetProduct() {
 			const productDurability = document.createElement('div');
 			const productCategory = document.createElement('div');
 			const productFormat = document.createElement('div');
-
+			const productPrice = document.createElement('div');
+			const productStock = document.createElement('div');
+			const toggleProductSection = document.querySelector('.product__container-information-toggle-section');
+			const toggleProductButton = document.querySelector('.product__container-information-toggle-button');
+			
+			//Appending node to parent
 			productContainer.appendChild(productBox);
 			productContainer.appendChild(productInformation);
 			productBox.appendChild(productTitle);
 			productBox.appendChild( productImageSingle);
 			productImageSingle.appendChild(productImageSingleURL);
 			productInformation.appendChild(productDescription);
-			productInformation.appendChild(productFamily);
-			productInformation.appendChild(productDurability);
-			productInformation.appendChild(productCategory);
-			productInformation.appendChild(productFormat);
+			productInformation.appendChild(toggleProductButton);
+			productInformation.appendChild(toggleProductSection);
+			toggleProductSection.appendChild(productFamily);
+			toggleProductSection.appendChild(productDurability);
+			toggleProductSection.appendChild(productCategory);
+			toggleProductSection.appendChild(productFormat);
+			toggleProductSection.appendChild(productPrice);
+			toggleProductSection.appendChild(productStock);
+			
 
 			//console.log(productContainer)
-		
+			
+			//Creating classnames and choosing data from query
 			productContainer.classList.add('product__container');
 			productContainer.classList.add('grid');
 			productContainer.classList.add('grid__column--12');
@@ -77,6 +93,7 @@ export default async function GetProduct() {
 			productBox.classList.add('grid__column--4');
 			productInformation.classList.add('product__container-information');
 			productInformation.classList.add('grid__column--8');
+			toggleProductSection.classList.add('grid__column--8');
 			/**
 			 * 
 			 * @TODO Figure out why the image is not appearing on 
@@ -120,19 +137,30 @@ export default async function GetProduct() {
 			productDescription.classList.add('grid__column--4');
 			productDescription.innerText = 'Description: ' +product[0].description;
 
+			toggleProductButton.classList.add('grid__column--4');
+			toggleProductButton.innerHTML = 'More Information'
+
 			productFamily.classList.add('product__container-information-family');
 			//productFamily.innerText = product[0].family;
 
 			productDurability.classList.add('product__container-information-durability');
-			productDurability.innerText = 'Durability: ' + product[0].durability;
+			productDurability.innerText = 'Durability: ' + product[0].durability + ' variety';
 			console.log(product[0].durability)
 
 			productCategory.classList.add('product__container-information-category');
-			productCategory.innerText = 'Type: ' + product[0].category;
+			productCategory.innerText = 'Type: ' + product[0].category ;
 
 			productFormat.classList.add('product__container-information-format');
 			productFormat.innerText = 'Product-Format: ' + product[0].productFormat
+			
+			productPrice.classList.add('product__container-information-price');
+			productPrice.innerText = 'Price: ' + product[0].price
 
+
+			productStock.classList.add('product__container-information-stock');
+			productStock.innerText = 'Items left: ' + product[0].stock
+
+			//Returning node element
 			return productContainer;
 		}
 
@@ -189,6 +217,7 @@ export default async function GetProduct() {
 
 		} */
 
+		//Function which renders products(seedAndPlant for now)
 		function renderHTML() {
 			const singleProduct = document.querySelector('.single-product');
 			//const singleSupply = document.querySelector('.single-supply');
