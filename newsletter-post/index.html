@@ -51,8 +51,8 @@
 						</li>
 					
 						<div class="footer__nav-menu-subscription grid__column--4">
-							<p class="footer__nav-menu-subscription-sumbit-description">a newsletter.adventures.unsolicited advice.</p>
-							<div class="footer__nav-menu-subscription-sumbit">
+							<form class="footer__nav-menu-subscription-sumbit">
+								<label class="footer__nav-menu-subscription-sumbit-description">a newsletter.adventures.unsolicited advice.</label>
 								<input class="footer__nav-menu-subscription-submit-email" 
 								type="email" 
 								placeholder="enter-email" 
@@ -62,8 +62,10 @@
 								required>
 								<!-- https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input/email 
 								https://developer.mozilla.org/en-US/docs/Learn/Forms/Form_validation-->
+								<!-- <span class="error" aria-live="polite"></span> -->
+								<!-- https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/ARIA_Live_Regions#basic_examples_aria-atomic -->
 								<button class="footer__nav-menu-subscription-sumbit-button" type="submit">Subscribe</button>
-							</div>
+							</form>
 						</div>
 					</menu>
 				</nav>

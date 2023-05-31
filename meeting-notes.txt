@@ -30,7 +30,9 @@ For the next sprint:
 - Add mediaQueries
 - Make clickable links for the cards which redirects to a new dynamic slug-based window.
 
-||2023-05-30||
+
+
+||2023-05-31||
 
 Attendees: ***
 
@@ -45,3 +47,4 @@ but I don’t think I have the time to do that).
 Last minute touches: 
 - Style the slugged-pages.
 - Maybe see if I can implement a search function? Highly doubt it, but could be fun to try.
+- Will probably be the last sprint, so this is the last of the notes
