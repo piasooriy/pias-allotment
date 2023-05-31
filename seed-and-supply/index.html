@@ -56,7 +56,15 @@
 						<div class="footer__nav-menu-subscription grid__column--4">
 							<p class="footer__nav-menu-subscription-sumbit-description">a newsletter.adventures.unsolicited advice.</p>
 							<div class="footer__nav-menu-subscription-sumbit">
-								<input class="footer__nav-menu-subscription-submit-email" type="text">
+								<input class="footer__nav-menu-subscription-submit-email" 
+								type="email" 
+								placeholder="enter-email" 
+								size="50" 
+								minlength="3" 
+								maxlength="64" 
+								required>
+								<!-- https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input/email 
+								https://developer.mozilla.org/en-US/docs/Learn/Forms/Form_validation-->
 								<button class="footer__nav-menu-subscription-sumbit-button" type="submit">Subscribe</button>
 							</div>
 						</div>

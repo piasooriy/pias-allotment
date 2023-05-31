@@ -36,7 +36,7 @@
 				<h1 class="front-page__title grid__column--6">Pia's Allotment</h1>
 			</main>
 			
-			<footer class="footer">
+			<<footer class="footer">
 				<nav class="footer__nav">
 					<menu class="footer__nav-menu grid">
 						<li class="footer__nav-menu-about">
@@ -46,7 +46,7 @@
 						<li class="footer__nav-menu-recommendations">
 							<a href="https://www.youtube.com/@CharlesDowding1nodig">recommendations</a>
 						</li>
-
+						
 						<li class="footer__nav-menu-youtube">
 							<a href="https://www.youtube.com/@gardenanswer">Youtube</a>
 						</li>
@@ -54,7 +54,15 @@
 						<div class="footer__nav-menu-subscription grid__column--4">
 							<p class="footer__nav-menu-subscription-sumbit-description">a newsletter.adventures.unsolicited advice.</p>
 							<div class="footer__nav-menu-subscription-sumbit">
-								<input class="footer__nav-menu-subscription-submit-email" type="text">
+								<input class="footer__nav-menu-subscription-submit-email" 
+								type="email" 
+								placeholder="enter-email" 
+								size="50" 
+								minlength="3" 
+								maxlength="64" 
+								required>
+								<!-- https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input/email 
+								https://developer.mozilla.org/en-US/docs/Learn/Forms/Form_validation-->
 								<button class="footer__nav-menu-subscription-sumbit-button" type="submit">Subscribe</button>
 							</div>
 						</div>
