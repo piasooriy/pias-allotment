@@ -1,10 +1,10 @@
+/* Using rem to style here */
+
 .product__card{
 	background-color: var(--color-box-background);
 	object-fit: cover;
 	margin: 1rem;
 }
-
-
 .product__container-box{
  width: 25rem;
  margin: 1rem;
@@ -38,13 +38,62 @@
 .product__container-information-format{
 	margin-left: 10rem;
 }
+.product__container-information-price{
+	margin-left: 10rem;
+}
+.product__container-information-stock{
+	margin-left: 10rem;
+}
 
+.product__container-information-toggle-button{
+	margin-left: 10rem;
+	margin-right: 15%;
+	margin-bottom: 2%;
+	background-color: var(--color-box-foreground);
+	color: var(--color-box-background);
+}
+.product__container-information-toggle-section{
+	display: none;
+}
+.product__container-information-toggle-section--visible{
+	display: block;
+}
 
 @media screen and (max-width: 1024px) {
 	.product__card{
 		width: 90%;
 		padding: 1rem;
 		margin: 5%;
+	}
+
+	.product__container-box{
+		width: 90%;
+		margin-right: 5%;
+	  }
+
+	.product__container-box-title{
+		font-size: 3rem;
+		margin-bottom: 1rem;
+		margin-left: 1rem;
+	}
+
+	.product__container-information{
+		font-size: 2rem;
+	  }
+
+	.product__container{
+		font-size: 2rem;
+	  }  
+
+	.product__container-information-description{
+		margin: 1rem;
+		font-size: 2rem;
+		
+	}  
+
+	.product__container-information-toggle-section--visible{
+		display: block;
+		margin: 1rem;
 	}
 
 }
