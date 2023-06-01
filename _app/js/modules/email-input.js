@@ -7,11 +7,32 @@ export default function EmailInput(){
 	 */
 	const email = document.querySelectorAll('.footer__nav-menu-subscription-submit-email');
 
-	email.addEventListener("input", (event) => {
+	/**
+	 * @NOTE an arrow function for form validation. 
+	 * Can also be written like this: 
+	 * 
+	 * if(email) {
+	 * email.addEventlistener('input', handleEmailInput);
+	 * }
+	 * 
+	 * function handleEmailInput(event) {
+	 * 	emailInput();
+	 * }
+	 * 
+	 * function emailInput(){
+	 * 	if(email.validity.typeMismatch){
+	 * 	.....
+	 * 	} else {
+	 * 	.....
+	 * 	}
+	 * }
+	 * 
+	 */
+	email.addEventListener('input', (event) => {
 		if (email.validity.typeMismatch){
-			email.setCutomValiditiy("Please enter your email adress here!");
+			email.setCutomValiditiy('Please enter your email adress here!');
 		} else {
-			email.setCutomValiditiy("");
+			email.setCutomValiditiy('');
 		}
 	}); 
 

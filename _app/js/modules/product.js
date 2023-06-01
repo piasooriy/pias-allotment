@@ -1,53 +1,34 @@
 import { readSlug } from "../util/utils.js";
-import { sanity } from "../sanity.js";
 import FetchSingleProduct from "./fetch-single-product.js";
 
 export default async function GetProduct() {
 
 	const products = await FetchSingleProduct();
 	const slug = readSlug();
-
-	/* const productQuery = `
-	 {
-	 "product": *[_type == 'seedAndPlant' && slug.current == "${slug}"]{       
-		_id,  
-		title,  
-		_type,
-		productFormat,
-		durability,  
-		"image": picture.asset->url,  
-		"altText": picture.alt,
-		"slug":slug.current,
-		description, 
-		"stock": metadata.stock, 
-		"price": metadata.price, 
-		"family": family._ref,  
-		category,
-	 },
-	 "supply": *[_type == 'supply']
-	}`;
-		
-	const products = await sanity.fetch(productQuery); */
-
 	/**
 	 * 
 	 * @NOTE the entire fetch + match slug function has been moved
 	 * out to seperate module 'fetch-single-product'
 	 */
 
-	//console.log(products)
+	/* console.log(products) */
 		
 	const product = products.product;
-	console.log(product)
+	/* console.log(product) */
+
+	/**
+	 * @NOTE not using supply right now, but can be used later
+	 */
 	const supply = products.supply;
 
 	if(slug !== undefined) {
-		console.log(slug);
+		/* console.log(slug); */
 		function createDynamicProductPageDOM(){
 			/**
 			 * @SEE https://developer.mozilla.org/en-US/docs/Web/API/Element#instance_properties
 			 * @NOTE To understand more of node elements
 			 */
+
 			//Creating HTML elements
 			const productContainer = document.createElement('div');
 			const productBox = document.createElement('div');
@@ -81,8 +62,7 @@ export default async function GetProduct() {
 			toggleProductSection.appendChild(productPrice);
 			toggleProductSection.appendChild(productStock);
 			
-
-			//console.log(productContainer)
+			/* console.log(productContainer) */
 			
 			//Creating classnames and choosing data from query
 			productContainer.classList.add('product__container');
@@ -121,14 +101,7 @@ export default async function GetProduct() {
 		}
 		//console.log(product[0].image)
 		//console.log(productImageSingle)
-		
-			/**
-			 * 
-			 * @NOTE Could maybe make a h2? but figcap works too,
-			 or is that the wrong way of doing this?, because all in
-			all the title is the description for the picture, like
-			the name of the item, right(?)
-			*/
+
 
 			productTitle.classList.add('product__container-box-title');
 			productTitle.innerText = product[0].title;
@@ -164,58 +137,13 @@ export default async function GetProduct() {
 			return productContainer;
 		}
 
-	/* 	function createDynamicSupplyPageDOM(){
-			const supplyContainer = document.createElement('div');
-			const supplyBox = document.createElement('div');
-			const supplyInformation = document.createElement('div');
-			const supplyImageSingle = document.createElement('figure');
-			const supplyImageSingleURL = document.createElement('img');
-			const supplyTitle = document.createElement('figcaption');
-			const supplyDescription = document.createElement('div');
-			const supplyFamily = document.createElement('div');
-			const supplyDurability = document.createElement('div');
-			const supplyCategory = document.createElement('div');
-			const supplyFormat = document.createElement('div');
-
-			supplyContainer.appendChild(supplyBox);
-			supplyContainer.appendChild(supplyInformation);
-			supplyBox.appendChild(supplyTitle);
-			supplyBox.appendChild( supplyImageSingle);
-			supplyImageSingle.appendChild(supplyImageSingleURL);
-			supplyInformation.appendChild(supplyFamily);
-			supplyInformation.appendChild(supplyDurability);
-			supplyInformation.appendChild(supplyCategory);
-			supplyInformation.appendChild(supplyFormat);
-			supplyInformation.appendChild(supplyDescription);
-
-			supplyImageSingleURL.src = supply[0].image;
-			supplyImageSingleURL.alt = supply[0].altText;
-
-			supplyContainer.classList.add('supply__container');
-			supplyBox.classList.add('supply__container-box');
-			supplyInformation.classList.add('supply__container-information');
-			
-			supplyTitle.classList.add('supply__container-box-title');
-			supplyTitle.innerText = supply[0].title;
-
-			supplyDescription.classList.add('supply__container-information-description');
-			supplyDescription.innerText = supply[0].description;
-
-			supplyFamily.classList.add('supply__container-information-family');
-			//supplyFamily.innerText = supply[0].family;
-
-			supplyDurability.classList.add('supply__container-information-durability');
-			supplyDurability.innerText = supply[0].durability;
-
-			supplyCategory.classList.add('supply__container-information-category');
-			supplyCategory.innerText = supply[0].category;
-
-			supplyFormat.classList.add('supply__container-information-format');
-			supplyFormat.innerText = supply[0].format
-
-			return supplyContainer;
-
-		} */
+		/***
+		 * 
+		 *@TODO fetch supply with slug-params, and create and render
+		 supplies in dynamic page to. Perhaps it has to go in an "if else" statement
+		 to match and filter out products vs. supplies. Or have it redirected into another 
+		 folder-index, instead of '/product/?', maybe '/supply/?' (?)
+		 */
 
 		//Function which renders products(seedAndPlant for now)
 		function renderHTML() {

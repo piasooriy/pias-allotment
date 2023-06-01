@@ -1,4 +1,3 @@
-
 export default function ToggleProduct() {
 	let informationVisible = false;
 

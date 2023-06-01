@@ -1,6 +1,9 @@
 import { sanity } from "../sanity"
 
-
+/**
+ * 
+ * @NOTE MODULE NOT IN USE
+ */
 
 export default async function FetchSingleSupply () {
 	const singleSupplyQuery = ` "supply": *[_type == 'supply' && slug.current == "${slug}"]{

@@ -14,30 +14,36 @@ export default async function SeedAndSupply() {
 	 * @SEE fetch-products under modules!!
 	 */		 
 	
+	//Creating HTML element
 	function createproductListContainerDOM() {
 	const productListContainer = document.createElement('div');
 	productListContainer.classList.add('product-list');
 	productListContainer.classList.add('grid');
 
+		//For-each-loop to create multiple containers/cards
 		for (const product of products.seedAndPlant) {
 			const productCard = document.createElement('a');
 			const productBox = document.createElement ('figure'); 
 			const productImage = document.createElement('img');
 			const productTitle = document.createElement('figcaption');
 
+			//Setting attribute for slug to later redirect to new window
 			productCard.setAttribute('href', `/product/?${product.slug}`);
 			/**
 			 * 
 			 * @NOTE Making a link based on the slug here, which can be 
 			 * accessed when hovering over and/or clicked on productCard 
 			 * due to function readSlug in utils(under util).
+			 * It redirects to an index under the folder "product".
 			 */
 
+			//Appending children to parent
 			productListContainer.appendChild(productCard);
 			productCard.appendChild(productBox)
 			productCard.appendChild(productTitle);
 			productBox.appendChild(productImage);
 
+			//Creating classnames and adding grid layout
 			productCard.classList.add('product__card');
 			productCard.classList.add('grid__column--3');
 			productBox.classList.add('product__box');
@@ -71,6 +77,8 @@ export default async function SeedAndSupply() {
 		 * of doing it. It looks very long, but at least it is easily 
 		 * understandable. 
 		 */
+
+		//For-each-loop
 		for (const product of products.supply) {
 			const productCard = document.createElement('a');
 			const productBox = document.createElement ('figure'); 
@@ -83,8 +91,10 @@ export default async function SeedAndSupply() {
 			 * @NOTE Making a link based on the slug here, which can be 
 			 * accessed when hovering over and/or clicked on productCard 
 			 * due to function readSlug in utils(under util).
+			 * It redirects to an index under the folder product. 
 			 */
 
+			//Appending children to parent
 			productListContainer.appendChild(productCard);
 			productCard.appendChild(productBox)
 			productCard.appendChild(productTitle);
@@ -117,10 +127,12 @@ export default async function SeedAndSupply() {
 			productTitle.innerText = product.title;
 		}
 
+		//Returning node element
 		return productListContainer;
 		
 	}
 	
+	//Render function
 	function renderHTML(){
 
 		/**
@@ -135,6 +147,7 @@ export default async function SeedAndSupply() {
 		mainElement.appendChild(productListContainer);
 	}		
 
+	//Calling render function
 	renderHTML();
 
 }
