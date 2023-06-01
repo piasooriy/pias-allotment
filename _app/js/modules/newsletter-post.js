@@ -41,7 +41,7 @@ export default async function GetNewsletterPost() {
 			//Creating classnames and choosing data from query
 			newsletterContainer.classList.add('newsletter__container');
 			newsletterContainer.classList.add('grid');
-			newsletterContainer.classList.add('grid__column--12');
+			newsletterContainer.classList.add('grid__column--8');
 			newsletterBox.classList.add('newsletter__container-box');
 			newsletterBox.classList.add('grid__coloumn--8');
 			newsletterInformation.classList.add('newsletter__information');

@@ -59,6 +59,9 @@
 	display: block;
 }
 
+/* Desktop first, then mobile layout. Not planning
+on implementing this for tablet */
+
 @media screen and (max-width: 1024px) {
 	.product__card{
 		width: 90%;

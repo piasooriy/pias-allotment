@@ -7,33 +7,32 @@ export default async function FrontPageContent() {
 	//Creating HTML element
 	function createFrontpageContainterDOM() {
 		const settingsContainer = document.createElement('div');
+		const settingsBox = document.createElement('div');
+		const about = document.createElement('div');
+		const socialMediaLinks = document.createElement('div');
+		const emailContact = document.createElement('div');
+		
+		//Creating classnames && grid layout
 		settingsContainer.classList.add('settings__containter');
 		settingsContainer.classList.add('grid__column--10');
+		settingsBox.classList.add('settings__box');
+		settingsBox.classList.add('grid__column--5');
+		
+		about.innerText = 'About us: ' + settings[0].about;
+		about.classList.add('settings__about');
+		about.classList.add('grid__column--3');
+		
+		socialMediaLinks.innerText = 'Find us at: ' + settings[0].socialMedia;
+		socialMediaLinks.classList.add('social__media-links');
+		
+		emailContact.innerText = 'Contact us at: ' + settings[0].contactEmail;
+		emailContact.classList.add('email__contact');
 		
 		//Appending children to parent
 		settingsContainer.appendChild(settingsBox);
 		settingsBox.appendChild(about)
 		settingsBox.appendChild(socialMediaLinks);
 		settingsBox.appendChild(emailContact);
-		
-		//Creating classnames && grid layout
-		const settingsBox = document.createElement('div');
-		settingsBox.classList.add('settings__box');
-		settingsBox.classList.add('grid__column--5');
-
-		const about = document.createElement('div');
-		about.innerText = 'About us: ' + settings[0].about;
-		about.classList.add('settings__about');
-		about.classList.add('grid__column--3');
-		
-		const socialMediaLinks = document.createElement('div');
-		socialMediaLinks.innerText = 'Find us at: ' + settings[0].socialMedia;
-		socialMediaLinks.classList.add('social__media-links');
-		
-		const emailContact = document.createElement('div');
-		emailContact.innerText = 'Contact us at: ' + settings[0].contactEmail;
-		emailContact.classList.add('email__contact');
-
 		/**
 		 * 
 		 * @NOTE Since I am trying to access the first and only item in the array
@@ -45,7 +44,7 @@ export default async function FrontPageContent() {
 		return settingsContainer;
 	}
 	
-	//REnder
+	//Render
 	function renderHTML() {
 		const aboutUs = document.querySelector('.front-page');
 		const settingsContainer = createFrontpageContainterDOM();
