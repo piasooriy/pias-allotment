@@ -69,7 +69,6 @@ export default async function GetProduct() {
 			productContainer.classList.add('grid');
 			productContainer.classList.add('grid__column--12');
 			productBox.classList.add('product__container-box');
-			productBox.classList.add('product__container-box');
 			productBox.classList.add('grid__column--4');
 			productInformation.classList.add('product__container-information');
 			productInformation.classList.add('grid__column--8');

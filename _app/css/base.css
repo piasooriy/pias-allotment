@@ -32,10 +32,6 @@ a:hover {
 	media can be multiple things, like print(where you can have display none
 	on like the header and footer
 	*/
-
-	body {
-		font-size: 5vw;
-	}
 }
 
 @media (min-width: 1920px) {

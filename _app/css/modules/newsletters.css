@@ -67,14 +67,59 @@ I like the best */
 	margin-bottom: 2%;
 }
 
-
-
+/* Desktop first, then mobile layout. Not planning
+on implementing this for tablet */
 
 @media screen and (max-width: 1024px) {
 	.newsletter__card{
 		width: 90%;
 		padding: 1rem;
 		margin: 5%;
+	}
+
+	.newsletter__container-box{
+		width: 90%;
+		margin-left: 50%;
+	}
+
+	.newsletter__container-box-title{
+		font-size: 3rem;
+	  }
+
+	  .newsletter__container-information-author{
+		margin-left: 25%;
+	  }
+	  .newsletter__container-box-plant-type{
+		margin-left: 25%;
+	  }
+	.newsletter__container-information{
+		width: 90%;
+		margin-left: 15%;
+	}
+
+	.newsletter__container-information-description{
+		font-size: 1rem;
+		margin-left: 10%;
+		margin-right: 15%;
+	}  
+
+	.newsletter__container-information-toggle-section{
+		margin-left: 0rem ;
+	}
+
+	.newsletter__container-box-direction{
+		margin-left: 10%;
+	}
+
+	.newsletter__container-box-supply{
+		margin-left: 10%;
+	}
+
+	.newsletter__container-information-toggle-section-button{
+		margin-left: 9%;
+	}
+	.newsletter__container-information-toggle-section{
+		width: 90%;
 	}
 
 }
