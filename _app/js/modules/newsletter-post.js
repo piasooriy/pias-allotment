@@ -4,8 +4,6 @@ import FetchSingleNewsletterPost from "./fetch-single-newsletter.js";
 export default async function GetNewsletterPost() {
 	const newsletterPost = await FetchSingleNewsletterPost();
 	const slug = readSlug();
-
-
 	console.log(newsletterPost)
 
 	if (slug !== undefined) {
