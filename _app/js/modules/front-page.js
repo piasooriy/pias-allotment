@@ -4,11 +4,19 @@ export default async function FrontPageContent() {
 
 	const settings = await FetchSettings();
 
+	//Creating HTML element
 	function createFrontpageContainterDOM() {
 		const settingsContainer = document.createElement('div');
 		settingsContainer.classList.add('settings__containter');
 		settingsContainer.classList.add('grid__column--10');
 		
+		//Appending children to parent
+		settingsContainer.appendChild(settingsBox);
+		settingsBox.appendChild(about)
+		settingsBox.appendChild(socialMediaLinks);
+		settingsBox.appendChild(emailContact);
+		
+		//Creating classnames && grid layout
 		const settingsBox = document.createElement('div');
 		settingsBox.classList.add('settings__box');
 		settingsBox.classList.add('grid__column--5');
@@ -34,14 +42,10 @@ export default async function FrontPageContent() {
 		 * https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array
 		 */
 		
-		settingsContainer.appendChild(settingsBox);
-		settingsBox.appendChild(about)
-		settingsBox.appendChild(socialMediaLinks);
-		settingsBox.appendChild(emailContact);
-		
 		return settingsContainer;
 	}
 	
+	//REnder
 	function renderHTML() {
 		const aboutUs = document.querySelector('.front-page');
 		const settingsContainer = createFrontpageContainterDOM();
@@ -55,7 +59,8 @@ export default async function FrontPageContent() {
 
 /**
  * 
- * @NOTE Remember to implement a try catch!
+ * @TODO Remember to implement a try catch!
+ * @NOTE Use the template bellow to make your own
  */
 
 /* try {
