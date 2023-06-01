@@ -85,6 +85,12 @@ export default async function SeedAndSupply() {
 			const productImage = document.createElement('img');
 			const productTitle = document.createElement('figcaption');
 
+			/**
+			 * @TODO maybe redirect based on slug and type to be able to access
+			 * seedAndPlant as well as Supply
+			 * Like this?
+			 * productCard.setAttribute('href', `/product/?slug=${product.slug}&type=${product._type}`);
+			 */
 			productCard.setAttribute('href', `/product/?${product.slug}`);
 			/**
 			 * 
